@@ -1,32 +1,56 @@
 import { useEffect, useState } from "react";
+import { observer } from "mobx-react-lite";
+import { useStore } from "../../store";
 import { StyledClock } from "./style";
 
-const Clock = () => {
-  const [time, setTime] = useState<Date>(new Date());
+const Clock = observer(() => {
+  const { timeStore } = useStore();
+  const { currentTime, setCurrentTime } = timeStore;
+  const [showTooltip, setShowTooltip] = useState<boolean>(false);
 
   useEffect(() => {
     const getTime = setInterval(() => {
-      setTime(new Date());
+      setCurrentTime();
     }, 1000);
     return () => {
       clearInterval(getTime);
     };
   });
 
+  const handleClockMouseOver = (over: boolean) => {
+    setShowTooltip(over);
+  };
+
   return (
-    <StyledClock id="clock_section">
+    <StyledClock
+      id="clock_section"
+      onMouseEnter={() => handleClockMouseOver(true)}
+      onMouseLeave={() => handleClockMouseOver(false)}
+    >
       <div className="center_circle" />
       <div
         className="dial hour"
-        style={{ transform: `rotateZ(${time?.getHours() * 30}deg)` }}
+        style={{
+          transform: `rotateZ(${
+            currentTime && currentTime?.getHours() * 30
+          }deg)`,
+        }}
       />
       <div
         className="dial minute"
-        style={{ transform: `rotateZ(${time?.getMinutes() * 6}deg)` }}
+        style={{
+          transform: `rotateZ(${
+            currentTime && currentTime?.getMinutes() * 6
+          }deg)`,
+        }}
       />
       <div
         className="dial second"
-        style={{ transform: `rotateZ(${time?.getSeconds() * 6}deg)` }}
+        style={{
+          transform: `rotateZ(${
+            currentTime && currentTime?.getSeconds() * 6
+          }deg)`,
+        }}
       />
       <div className="clock_numbers">
         <span className="twelve">12</span>
@@ -44,6 +68,6 @@ const Clock = () => {
       </div>
     </StyledClock>
   );
-};
+});
 
 export default Clock;
