@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../store";
 import { StyledClock } from "./style";
 
 const Clock = observer(() => {
   const { timeStore } = useStore();
-  const { currentTime, setCurrentTime } = timeStore;
-  const [showTooltip, setShowTooltip] = useState<boolean>(false);
+  const { currentTime, setCurrentTime, setShowTooltip } = timeStore;
 
   useEffect(() => {
     const getTime = setInterval(() => {
