@@ -1,12 +1,33 @@
+import { useEffect, useState } from "react";
 import { StyledClock } from "./style";
 
 const Clock = () => {
+  const [time, setTime] = useState<Date>(new Date());
+
+  useEffect(() => {
+    const getTime = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return () => {
+      clearInterval(getTime);
+    };
+  });
+
   return (
     <StyledClock id="clock_section">
       <div className="center_circle" />
-      <div className="dial hour" />
-      <div className="dial minute" />
-      <div className="dial second" />
+      <div
+        className="dial hour"
+        style={{ transform: `rotateZ(${time?.getHours() * 30}deg)` }}
+      />
+      <div
+        className="dial minute"
+        style={{ transform: `rotateZ(${time?.getMinutes() * 6}deg)` }}
+      />
+      <div
+        className="dial second"
+        style={{ transform: `rotateZ(${time?.getSeconds() * 6}deg)` }}
+      />
       <div className="clock_numbers">
         <span className="twelve">12</span>
         <span className="one">1</span>
