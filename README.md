@@ -44,7 +44,7 @@ npm start
 
 ## Structures
 
-*본 프로젝트는 **Create-React-App(Typescript)**을 통해 생성된 프로젝트입니다.*
+*본 프로젝트는 Create-React-App(Typescript)를 통해 생성되었습니다.*
 
 *아래는 `src/` 하위 폴더 및 파일에 대한 설명입니다.*
 
@@ -67,8 +67,7 @@ npm start
 ### Commit & Branch
 
 - branch: 
-작업 단위로 커밋을 나누었고, `feature/analog-clock-page`에서 개발 후,<br />            
-자잘한 refactoring 작업들은 `refactor/{…}` 브랜치에서 작업 후  `master` merge 하였습니다.<br />
+작업 단위로 커밋을 나누었고, `feature/analog-clock-page`에서 개발 후, 자잘한 refactoring 작업들은 `refactor/{…}` 브랜치에서 작업 후  `master` merge 하였습니다.<br />
 - commit msg type
 [참고 링크](https://medium.com/humanscape-tech/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-commit-message-%EC%9E%91%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-conventional-commits-ae885898e754)
     - **build**: 모듈 설치 및 package 변화
