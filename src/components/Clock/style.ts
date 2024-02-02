@@ -64,7 +64,7 @@ export const StyledClock = styled.div`
   }
 
   .twelve {
-    top: 1%;
+    top: 10px;
     left: 48%;
   }
 
@@ -74,47 +74,47 @@ export const StyledClock = styled.div`
   }
 
   .two {
-    top: 26%;
+    top: 25%;
     right: 9%;
   }
 
   .three {
     top: 47%;
-    right: 2%;
+    right: 10px;
   }
 
   .four {
-    bottom: 26%;
-    right: 9%;
+    bottom: 27%;
+    right: 10%;
   }
 
   .five {
-    bottom: 8%;
+    bottom: 10%;
     right: 24%;
   }
 
   .six {
-    bottom: 1%;
+    bottom: 10px;
     left: 49%;
   }
 
   .seven {
-    bottom: 8%;
+    bottom: 10%;
     left: 24%;
   }
 
   .eight {
-    bottom: 26%;
-    left: 9%;
+    bottom: 27%;
+    left: 10%;
   }
 
   .nine {
-    top: 49%;
-    left: 2%;
+    top: 47%;
+    left: 10px;
   }
 
   .ten {
-    top: 26%;
+    top: 25%;
     left: 9%;
   }
 
